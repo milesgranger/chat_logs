@@ -19,14 +19,13 @@ RUN conda install matplotlib seaborn -y
 RUN pip install --upgrade pip==9.0.1
 RUN pip install keras tensorflow psutil
 
-
 # setup code and working directory
 COPY . /workdir
 WORKDIR /workdir
 
 # Run the program
 EXPOSE 8888
-#ENTRYPOINT ["jupyter"]
+ENTRYPOINT ["bash"]
 #CMD ["python", "main.py"]
 
 # Run like docker container run -p 8888:8888 <docker image> notebook --ip 0.0.0.0 --no-browser --allow-root --port 8888
