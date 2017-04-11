@@ -15,12 +15,19 @@ RUN conda config --add channels conda-forge
 RUN conda install numpy pandas scikit-learn bokeh -y
 RUN conda install pytorch torchvision cuda80 -c soumith -y
 RUN conda install jupyter notebook -y
+RUN conda install matplotlib seaborn -y
 RUN pip install --upgrade pip==9.0.1
-RUN pip install keras tensorflow
+RUN pip install keras tensorflow psutil
+
 
 # setup code and working directory
 COPY . /workdir
 WORKDIR /workdir
 
 # Run the program
-CMD ["jupyter",  "notebook", "--ip 0.0.0.0", "--no-browser"]
+#EXPOSE 8888
+#ENTRYPOINT ["jupyter"]
+CMD ["python", "main.py"]
+
+# Run like docker container run -p 8888:8888 <docker image> notebook --ip 0.0.0.0 --no-browser --allow-root --port 8888
+# Use docker-machine ip address
