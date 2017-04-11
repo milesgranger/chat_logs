@@ -1,0 +1,7 @@
+dev:
+  build: .
+  ports:
+    - "8888:8888"
+  volumes:
+    - .:/workdir
+  command: jupyter notebook --allow-root --ip 0.0.0.0 --no-browser

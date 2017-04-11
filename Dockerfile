@@ -25,9 +25,9 @@ COPY . /workdir
 WORKDIR /workdir
 
 # Run the program
-#EXPOSE 8888
+EXPOSE 8888
 #ENTRYPOINT ["jupyter"]
-CMD ["python", "main.py"]
+#CMD ["python", "main.py"]
 
 # Run like docker container run -p 8888:8888 <docker image> notebook --ip 0.0.0.0 --no-browser --allow-root --port 8888
 # Use docker-machine ip address

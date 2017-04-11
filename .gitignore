@@ -103,5 +103,3 @@ ENV/
 .idea/modules.xml
 .idea/preferred-vcs.xml
 .idea/workspace.xml
-Dockerfile
-Untitled.ipynb
