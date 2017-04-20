@@ -25,8 +25,5 @@ WORKDIR /workdir
 
 # Run the program
 EXPOSE 8888
-ENTRYPOINT ["bash"]
-#CMD ["python", "main.py"]
-
-# Run like docker container run -p 8888:8888 <docker image> notebook --ip 0.0.0.0 --no-browser --allow-root --port 8888
-# Use docker-machine ip address
+#ENTRYPOINT ["bash"]
+#CMD ["jupyter",  "notebook", "--ip 0.0.0.0", "--no-browser"]
